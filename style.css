@@ -125,8 +125,8 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100px;
-  height: 120px;
+  width: 120px; /* Ukuran lebih kecil */
+  height: 140px; /* Ukuran lebih kecil */
   background-color: #682b18;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -134,7 +134,7 @@ body {
 }
 
 .countdown-box span {
-  font-size: 3rem;
+  font-size: 2.5rem; /* Ukuran font lebih kecil */
   font-weight: bold;
   color: #f4bdb5;
 }
@@ -253,7 +253,7 @@ body {
 /* Media Query untuk tampilan mobile */
 @media (max-width: 768px) {
   .page-1 .welcome {
-    font-size: 10vw; /* Ukuran font yang lebih kecil */
+    font-size: 10vw; /* Ukuran font lebih kecil */
   }
 
   .page-1 .open-btn {
@@ -271,8 +271,8 @@ body {
   }
 
   .countdown-box {
-    width: 80px;
-    height: 100px;
+    width: 90px; /* Ukuran lebih kecil */
+    height: 110px; /* Ukuran lebih kecil */
     font-size: 2rem; /* Lebih kecil */
   }
 
