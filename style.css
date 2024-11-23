@@ -127,7 +127,7 @@ body {
 
 .countdown-box {
   position: absolute;
-  bottom: 10%;
+  bottom: 3%;
   left: 50%;
   display: flex;
   flex-direction: column;
