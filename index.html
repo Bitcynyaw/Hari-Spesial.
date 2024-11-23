@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Undangan Digital</title>
+  <link rel="stylesheet" href="style.css"> <!-- Link ke file CSS -->
+</head>
+<body>
+  <!-- Halaman Pertama -->
+  <div class="page page-1">
+    <div class="welcome"></div>
+    <button class="open-btn">Buka Undangan</button>
+  </div>
+
+  <!-- Halaman Kedua -->
+  <div class="page page-2">
+    <!-- Bagian Countdown -->
+    <div class="section countdown-section">
+      <div class="countdown" id="countdown">
+        <div class="countdown-box" id="Hari">
+          <span>0</span>
+          <div class="label">days</div>
+        </div>
+        <div class="countdown-box" id="Jam">
+          <span>0</span>
+          <div class="label">hours</div>
+        </div>
+        <div class="countdown-box" id="Menit">
+          <span>0</span>
+          <div class="label">minutes</div>
+        </div>
+        <div class="countdown-box" id="Detik">
+          <span>0</span>
+          <div class="label">seconds</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bagian Nama Mempelai -->
+    <div class="section couple-section">
+      <!-- Tambahkan nama mempelai -->
+    </div>
+
+    <!-- Bagian Save The Date -->
+    <div class="section maps-section">
+      <a href="https://www.google.com/maps/place/Gedung+Serbaguna+Kusuma+Raga/@-6.3152507,106.9957769,17z/data=!3m1!4b1!4m6!3m5!1s0x2e6992225c6c0b53:0x1c118d817ae82e34!8m2!3d-6.3152507!4d106.9983518!16s%2Fg%2F1q5bl0y71?entry=ttu&g_ep=EgoyMDI0MTExOS4yIKXMDSoJLDEwMjExMjM0SAFQAw%3D%3D" target="_blank" class="event-map-button">📍Lihat Maps</a>
+    </div>
+
+    <!-- Bagian Galeri Foto -->
+    <div class="section gallery-section">
+      <h2 class="gallery-title">Galeri Foto</h2>
+      <p class="gallery-subtitle">Memori kisah kami</p>
+      
+      <!-- Galeri dengan gambar yang berganti-ganti -->
+      <div class="gallery-container">
+        <img src="./newp1.jpg" alt="Foto 1" class="gallery-image">
+      </div>
+    </div>
+  </div>
+
+  <!-- Elemen Audio -->
+  <audio id="background-music" src="./marryyourdaughter.mp3" preload="auto" loop></audio>
+
+  <script>
+    // Menampilkan halaman kedua dan memutar musik
+    document.querySelector('.open-btn').addEventListener('click', () => {
+      document.querySelector('.page-1').style.display = 'none';
+      document.querySelector('.page-2').style.display = 'block';
+      
+      const audio = document.getElementById('background-music');
+      if (audio.paused) {
+        audio.play().catch(error => console.error("Gagal memutar musik:", error));
+      }
+    });
+
+    // Countdown
+    const eventDate = new Date("2024-12-14T00:00:00").getTime();
+    setInterval(() => {
+      const now = new Date().getTime();
+      const distance = eventDate - now;
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById("Hari").innerHTML = `<span>${days}</span><div class="label">days</div>`;
+      document.getElementById("Jam").innerHTML = `<span>${hours}</span><div class="label">hours</div>`;
+      document.getElementById("Menit").innerHTML = `<span>${minutes}</span><div class="label">minutes</div>`;
+      document.getElementById("Detik").innerHTML = `<span>${seconds}</span><div class="label">seconds</div>`;
+    }, 1000);
+
+    // Galeri Foto: Pergantian gambar otomatis
+    const images = [
+      './newp1.jpg',
+      './newp2.jpg',
+      './newp3.jpg',
+      './newp4.jpg',
+      './newp5.jpg'
+    ]; // Daftar gambar
+    let currentIndex = 0; // Indeks awal
+    const galleryImage = document.querySelector('.gallery-image');
+
+    function changeImage() {
+      currentIndex = (currentIndex + 1) % images.length; // Indeks berputar
+      galleryImage.style.opacity = 0; // Efek fade out
+      setTimeout(() => {
+        galleryImage.src = images[currentIndex]; // Ganti gambar
+        galleryImage.style.opacity = 1; // Efek fade in
+      }, 500); // Waktu sinkron dengan transisi
+    }
+
+    // Ganti gambar setiap 5 detik
+    setInterval(changeImage, 5000);
+  </script>
+</body>
+</html>
