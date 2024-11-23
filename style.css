@@ -1,251 +1,295 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Times New Roman', Times, serif;
-  }
-  
-  body {
-    overflow: hidden;
-  }
-  
-  @keyframes fadeIn {
-    from {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+body {
+  overflow: hidden;
+}
+
+@keyframes fadeIn {
+  from {
       opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
   }
-  
-  @keyframes slideInFromTop {
-    from {
+  to {
+      opacity: 1;
+  }
+}
+
+@keyframes slideInFromTop {
+  from {
       transform: translateY(-100%);
       opacity: 0;
-    }
-    to {
+  }
+  to {
       transform: translateY(0);
       opacity: 1;
-    }
   }
-  
-  @keyframes scaleUp {
-    from {
+}
+
+@keyframes scaleUp {
+  from {
       transform: scale(0.8);
       opacity: 0;
-    }
-    to {
+  }
+  to {
       transform: scale(1);
       opacity: 1;
-    }
   }
-  
-  /* Halaman Pertama */
-  .page {
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    text-align: center;
-    position: relative;
-  }
-  
-  .page-1 {
-    background: url('./new1.gif') no-repeat center center/cover;
-    animation: fadeIn 1.5s ease-in-out;
-  }
-  
-  .page-1 .welcome {
-    color: #fff;
-    font-size: 5vw;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    animation: slideInFromTop 1s ease-in-out;
-  }
-  
-  .page-1 .open-btn {
-    position: absolute;
-    bottom: 10%;
-    left: 41%;
-    padding: 1vw 2.5vw;
-    font-size: 2vw;
-    color: #f4bdb5;
-    background: #682b18;
-    border: none;
-    border-radius: 30px;
-    cursor: pointer;
-    transition: 0.3s ease-in-out;
-    animation: scaleUp 1.5s ease-in-out;
-  }
-  
-  .page-1 .open-btn:hover {
-    background: #682b18;
-    transform: scale(1.05);
-  }
-  
-  /* Halaman Kedua */
-  .page-2 {
-    display: none;
-    overflow-y: scroll;
-    height: 100vh;
-    scroll-snap-type: y mandatory;
-    background: url('./ffk.jpg') no-repeat center center/cover;
-  }
-  
-  .section {
-    width: 100%;
-    height: 100vh;
-    flex-shrink: 0;
-    scroll-snap-align: start;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    text-align: center;
-    padding: 5%;
-    animation: fadeIn 1.5s ease-in-out;
-  }
-  
-  /* Countdown Style */
-  .countdown-section {
-    background: url('./new2.gif') no-repeat center center/cover;
-  }
-  
-  .countdown {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 30vh;
-    animation: slideInFromTop 1.5s ease-in-out;
-  }
-  
-  .countdown-box {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 95px;
-    height: 115px;
-    background-color: #682b18;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    text-align: center;
-  }
-  
-  .countdown-box span {
-    font-size: 3rem;
-    font-weight: bold;
-    color: #f4bdb5;
-  }
-  
-  .countdown-box .label {
-    font-size: 1rem;
-    font-weight: normal;
-    color: #f4bdb5;
-    margin-top: 5px;
-  }
-  
-  /* Nama Mempelai */
-  .couple-section {
-    background: url('./new3.gif') no-repeat center center/cover;
-  }
-  
-  .couple-names {
-    font-size: 5vw;
-    font-weight: bold;
-    margin-top: 2vh;
-    animation: scaleUp 1.5s ease-in-out;
-    color: #fff;
-  }
-  
-  .couple-description {
-    font-size: 3vw;
-    margin-top: 1vh;
-    animation: slideInFromTop 1.5s ease-in-out;
-    color: #fff;
-  }
-  
-  /* Galeri Foto */
-  .gallery-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    background: url('./new5.gif') no-repeat center center/cover; /* Menambahkan background GIF */
-    background-size: cover; /* Pastikan GIF mengisi seluruh area */
-    width: 100%;
-    height: 100vh;
-  }
-  .gallery-container {
-    position: relative;
-    width: 900px; /* Ukuran gambar yang lebih kecil */
-    height: 900px;
-    border: 10px solid #682b18; /* Bingkai di sekitar gambar */
-    border-radius: 15px; /* Efek melengkung pada bingkai */
-    overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Efek bayangan */
-  }
-  
-  .gallery-title {
-    font-size: 3vw;
-    font-weight: bold;
-    color: #682b18;
-    margin-bottom: 1vw;
-  }
-  
-  .gallery-subtitle {
-    font-size: 1.5vw;
-    margin-bottom: 2vw;
-    color: #5d2121;
-  }
-  
-  .gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 300px)); /* Kotak tetap ukuran 300x300 */
-    gap: 20px;
-    padding: 0 10%;
-    justify-content: center; /* Pusatkan isi galeri */
-  }
-  
-  .gallery img {
-    width: 100%; /* Gambar mengisi seluruh container */
-    height: 100%;
-    object-fit: cover; /* Memotong gambar agar tidak pecah */
-    transition: opacity 0.5s ease;
-  }
-  
-  .gallery img:hover {
-    transform: scale(1.05); /* Perbesar sedikit saat hover */
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3); 
-  }
-  
-  /* Button Maps */
-  .maps-section {
-    background: url('./new4.gif') no-repeat center center/cover;
-    position: relative;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-  }
-  
-  .event-map-button {
-    position: absolute;
-    bottom: 10%;
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 15px 25px;
-    background: #682b18;
-    color: #f4bdb5;
-    font-size: 3vw;
-    border-radius: 15px;
-    text-decoration: none;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease-in-out;
-  }
-  
-  .event-map-button:hover {
-    background: #682b18;
-  }
-  
+}
+
+/* Halaman Pertama */
+.page {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  position: relative;
+}
+
+.page-1 {
+  background: url('./new1.gif') no-repeat center center/cover;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.page-1 .welcome {
+  color: #fff;
+  font-size: 5vw;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  animation: slideInFromTop 1s ease-in-out;
+}
+
+.page-1 .open-btn {
+  position: absolute;
+  bottom: 10%;
+  left: 41%;
+  padding: 1vw 2.5vw;
+  font-size: 2vw;
+  color: #f4bdb5;
+  background: #682b18;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  animation: scaleUp 1.5s ease-in-out;
+}
+
+.page-1 .open-btn:hover {
+  background: #682b18;
+  transform: scale(1.05);
+}
+
+/* Halaman Kedua */
+.page-2 {
+  display: none;
+  overflow-y: scroll;
+  height: 100vh;
+  scroll-snap-type: y mandatory;
+  background: url('./ffk.jpg') no-repeat center center/cover;
+}
+
+.section {
+  width: 100%;
+  height: 100vh;
+  flex-shrink: 0;
+  scroll-snap-align: start;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 5%;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Countdown Style */
+.countdown-section {
+  background: url('./new2.gif') no-repeat center center/cover;
+}
+
+.countdown {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 30vh;
+  animation: slideInFromTop 1.5s ease-in-out;
+}
+
+.countdown-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 120px;
+  background-color: #682b18;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.countdown-box span {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #f4bdb5;
+}
+
+.countdown-box .label {
+  font-size: 1rem;
+  font-weight: normal;
+  color: #f4bdb5;
+  margin-top: 5px;
+}
+
+/* Nama Mempelai */
+.couple-section {
+  background: url('./new3.gif') no-repeat center center/cover;
+}
+
+.couple-names {
+  font-size: 5vw;
+  font-weight: bold;
+  margin-top: 2vh;
+  animation: scaleUp 1.5s ease-in-out;
+  color: #fff;
+}
+
+.couple-description {
+  font-size: 3vw;
+  margin-top: 1vh;
+  animation: slideInFromTop 1.5s ease-in-out;
+  color: #fff;
+}
+
+/* Galeri Foto */
+.gallery-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background: url('./new5.gif') no-repeat center center/cover;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+}
+.gallery-container {
+  position: relative;
+  width: 900px;
+  height: 900px;
+  border: 10px solid #682b18;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.gallery-title {
+  font-size: 3vw;
+  font-weight: bold;
+  color: #682b18;
+  margin-bottom: 1vw;
+}
+
+.gallery-subtitle {
+  font-size: 1.5vw;
+  margin-bottom: 2vw;
+  color: #5d2121;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 300px));
+  gap: 20px;
+  padding: 0 10%;
+  justify-content: center;
+}
+
+.gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.5s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Button Maps */
+.maps-section {
+  background: url('./new4.gif') no-repeat center center/cover;
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.event-map-button {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 15px 25px;
+  background: #682b18;
+  color: #f4bdb5;
+  font-size: 3vw;
+  border-radius: 15px;
+  text-decoration: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out;
+}
+
+.event-map-button:hover {
+  background: #682b18;
+}
+
+/* Media Query untuk tampilan mobile */
+@media (max-width: 768px) {
+.page-1 .welcome {
+  font-size: 10vw; /* Ukuran font yang lebih kecil */
+}
+
+.page-1 .open-btn {
+  font-size: 4vw;
+  padding: 3vw 7vw;
+}
+
+.page-2 .section {
+  padding: 5%;
+}
+
+.countdown {
+  flex-direction: column;
+  margin-top: 20vh;
+}
+
+.countdown-box {
+  width: 80px;
+  height: 100px;
+  font-size: 2rem; /* Lebih kecil */
+}
+
+.gallery-container {
+  width: 80vw;
+  height: 80vw;
+}
+
+.gallery-title {
+  font-size: 5vw;
+}
+
+.gallery-subtitle {
+  font-size: 3vw;
+}
+
+.event-map-button {
+  font-size: 5vw;
+  padding: 8px 12px;
+}
+}
