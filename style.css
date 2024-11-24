@@ -71,7 +71,6 @@ body {
   position: absolute;
   bottom: 10%;
   left: 39%;
-  transform: translateX();
   padding: 1.5vw 3vw;
   font-size: 3vw;
   color: #f4bdb5;
@@ -114,20 +113,24 @@ body {
 /* Countdown Style */
 .countdown-section {
   background: url('./new2.gif') no-repeat center center/cover;
+  margin-top: 15vh;
 }
 
 .countdown {
-  display: flex; /* Layout fleksibel */
-  justify-content: center; /* Pusatkan elemen secara horizontal */
-  align-items: center; /* Pusatkan elemen secara vertikal */
-  gap: 15px; /* Jarak antar elemen */
+  position: absolute;
+  bottom: 17%; /* Turunkan posisi lebih jauh dari bawah layar */
+  left: 27%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
   margin-top: 20px;
   flex-wrap: wrap; /* Elemen akan turun ke baris berikut jika ruang tidak cukup */
 }
 
 .countdown-box {
+  position: relative; /* Mengubah menjadi relative */
   display: flex;
-  
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -154,7 +157,6 @@ body {
   color: #f4bdb5;
   margin-top: 5px;
 }
-
 
 /* Nama Mempelai */
 .couple-section {
