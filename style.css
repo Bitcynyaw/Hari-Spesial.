@@ -70,8 +70,8 @@ body {
 .page-1 .open-btn {
   position: absolute;
   bottom: 10%;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 39%;
+  transform: translateX();
   padding: 1.5vw 3vw;
   font-size: 3vw;
   color: #f4bdb5;
@@ -117,24 +117,23 @@ body {
 }
 
 .countdown {
-  display: flex;
-  flex-wrap: wrap; /* Supaya elemen otomatis turun jika ruang tidak cukup */
-  justify-content: center;
-  align-items: center;
-  gap: 10px; /* Menambah jarak antar elemen */
+  display: flex; /* Layout fleksibel */
+  justify-content: center; /* Pusatkan elemen secara horizontal */
+  align-items: center; /* Pusatkan elemen secara vertikal */
+  gap: 15px; /* Jarak antar elemen */
   margin-top: 20px;
+  flex-wrap: wrap; /* Elemen akan turun ke baris berikut jika ruang tidak cukup */
 }
 
 .countdown-box {
-  position: absolute;
-  bottom: 3%;
-  left: 50%;
   display: flex;
+  
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 20vw; /* Lebar dinamis */
   max-width: 90px; /* Batas maksimal untuk layar besar */
+  min-width: 60px; /* Batas minimal untuk layar kecil */
   height: auto; /* Tinggi mengikuti konten */
   background-color: #682b18;
   border-radius: 10px;
@@ -144,17 +143,18 @@ body {
 }
 
 .countdown-box span {
-  font-size: 5vw; /* Ukuran font dinamis */
+  font-size: 4vw; /* Ukuran font dinamis */
   font-weight: bold;
   color: #f4bdb5;
 }
 
 .countdown-box .label {
-  font-size: 2.5vw; /* Ukuran label dinamis */
+  font-size: 2vw; /* Ukuran label dinamis */
   font-weight: normal;
   color: #f4bdb5;
   margin-top: 5px;
 }
+
 
 /* Nama Mempelai */
 .couple-section {
