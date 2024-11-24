@@ -20,19 +20,19 @@
       <div class="countdown" id="countdown">
         <div class="countdown-box" id="Hari">
           <span>0</span>
-          <div class="label">days</div>
+          <div class="label">Hari</div>
         </div>
         <div class="countdown-box" id="Jam">
           <span>0</span>
-          <div class="label">hours</div>
+          <div class="label">Jam</div>
         </div>
         <div class="countdown-box" id="Menit">
           <span>0</span>
-          <div class="label">minutes</div>
+          <div class="label">Menit</div>
         </div>
         <div class="countdown-box" id="Detik">
           <span>0</span>
-          <div class="label">seconds</div>
+          <div class="label">Detik</div>
         </div>
       </div>
     </div>
@@ -80,15 +80,19 @@
       const now = new Date().getTime();
       const distance = eventDate - now;
 
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      if (distance > 0) {
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-      document.getElementById("Hari").innerHTML = `<span>${days}</span><div class="label">days</div>`;
-      document.getElementById("Jam").innerHTML = `<span>${hours}</span><div class="label">hours</div>`;
-      document.getElementById("Menit").innerHTML = `<span>${minutes}</span><div class="label">minutes</div>`;
-      document.getElementById("Detik").innerHTML = `<span>${seconds}</span><div class="label">seconds</div>`;
+        document.getElementById("Hari").innerHTML = `<span>${days}</span><div class="label">Hari</div>`;
+        document.getElementById("Jam").innerHTML = `<span>${hours}</span><div class="label">Jam</div>`;
+        document.getElementById("Menit").innerHTML = `<span>${minutes}</span><div class="label">Menit</div>`;
+        document.getElementById("Detik").innerHTML = `<span>${seconds}</span><div class="label">Detik</div>`;
+      } else {
+        document.getElementById("countdown").innerHTML = "<p>Acara telah dimulai!</p>";
+      }
     }, 1000);
 
     // Galeri Foto: Pergantian gambar otomatis
