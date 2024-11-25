@@ -239,12 +239,15 @@
 
 /* Hide all images by default except the first one */
 .gallery img {
-  display: none;
+  max-width: 80%; /* Gambar tidak lebih dari 80% lebar */
+  height: auto; /* Mempertahankan rasio aspek */
+  display: none; /* Sembunyikan semua gambar */
 }
 
 .gallery img.active {
-  display: block; /* Show only the active image */
+  display: block; /* Hanya gambar aktif yang ditampilkan */
 }
+
 
 
   /* Button Maps */
