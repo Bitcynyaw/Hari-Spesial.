@@ -55,7 +55,6 @@
     width: 100vw;
     height: 100vh;
   }
-  
 
   .page-1 {
     background: url('./bg1.mp4') no-repeat center center/cover;
@@ -64,16 +63,15 @@
 
   .page-1 .welcome {
     color: #fff;
-    font-size: 10vw; /* Ukuran font disesuaikan untuk handphone */
+    font-size: 10vw;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     animation: slideInFromTop 1s ease-in-out;
   }
 
   .page-1 .open-btn {
     position: absolute;
-    bottom: 25%; /* Atur jarak dari bawah */
+    bottom: 25%;
     left: 34%;
-    transform: translateX();
     padding: 2.5vw 6vw;
     font-size: 3vw;
     color: #f4bdb5;
@@ -81,10 +79,9 @@
     border: none;
     border-radius: 30px;
     cursor: pointer;
-    transition: 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out;
     animation: scaleUp 1.5s ease-in-out;
   }
-  
 
   .page-1 .open-btn:hover {
     background: #682b18;
@@ -94,7 +91,7 @@
   /* Halaman Kedua */
   .page-2 {
     display: none;
-    overflow-y: scroll;
+    overflow-y: auto;
     height: 100vh;
     scroll-snap-type: y mandatory;
     background: url('./ffk.jpg') no-repeat center center/cover;
@@ -120,43 +117,38 @@
     margin-top: 15vh;
   }
 
-  .countdown  {
+  .countdown {
     position: absolute;
-    bottom: -7%; /* Naikkan sedikit */
+    bottom: -7%;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px; /* Jarak antar kotak */
+    gap: 10px;
   }
-  
 
   .countdown-box {
-    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 15vw; /* Ukuran box lebih kecil */
+    width: 15vw;
     max-width: 50px;
     height: auto;
     background-color: #682b18;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     text-align: center;
-    padding: 5px; /* Padding lebih kecil */
+    padding: 5px;
   }
 
   .countdown-box span {
-    font-size: 4vw; /* Ukuran angka lebih kecil */
+    font-size: 4vw;
     font-weight: bold;
     color: #f4bdb5;
   }
 
   .countdown-box .label {
-    font-size: 3vw; /* Ukuran label lebih kecil */
-    font-weight: normal;
+    font-size: 3vw;
     color: #f4bdb5;
     margin-top: 3px;
   }
@@ -181,81 +173,58 @@
     color: #fff;
   }
 
- /* Galeri Foto */
- .gallery-section {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-  background: url('./bg5.mp4') no-repeat center center/cover;
-  background-size: cover;
-  width: 100%;
-  height: 100vh;
-}
+  /* Galeri Foto */
+  .gallery-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background: url('./bg5.mp4') no-repeat center center/cover;
+    width: 100%;
+    height: 100vh;
+  }
 
-.gallery-container {
-  position: relative;
-  width: 90%;
-  max-width: 900px;
-  height: auto;
-  border: 10px solid #682b18;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-}
+  .gallery-container {
+    position: relative;
+    width: 90%;
+    max-width: 900px;
+    border: 10px solid #682b18;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  }
 
-.gallery-title {
-  font-size: 5vw;
-  font-weight: bold;
-  color: #682b18;
-  margin-bottom: 1vw;
-}
+  .gallery-title {
+    font-size: 5vw;
+    font-weight: bold;
+    color: #682b18;
+    margin-bottom: 1vw;
+  }
 
-.gallery-subtitle {
-  font-size: 4vw;
-  margin-bottom: 2vw;
-  color: #5d2121;
-}
+  .gallery-subtitle {
+    font-size: 4vw;
+    margin-bottom: 2vw;
+    color: #5d2121;
+  }
 
-.gallery {
-  position: relative;
-  width: 100%;
-  height: 500px; /* Tinggi kotak galeri */
-}
+  .gallery img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: none;
+    transition: opacity 0.5s ease;
+  }
 
-.gallery img {
-  max-width: 80%; /* Limit image width */
-  height: auto; /* Maintain aspect ratio */
-  object-fit: cover;
-  transition: transform 0.5s ease, box-shadow 0.5s ease;
-}
-
-.gallery img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-}
-
-/* Hide all images by default except the first one */
-.gallery img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%; /* Gambar memenuhi kotak */
-  height: 100%; /* Gambar memenuhi kotak */
-  object-fit: cover; /* Menyesuaikan gambar */
-  display: none; /* Sembunyikan semua gambar */
-  transition: opacity 0.5s ease; /* Animasi transisi */
-}
-
-.gallery img.active {
-  display: block; /* Hanya gambar aktif yang ditampilkan */
-}
+  .gallery img.active {
+    display: block;
+  }
 
   /* Button Maps */
   .maps-section {
     background: url('./bg4.mp4') no-repeat center center/cover;
-    position: relative;
-    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: flex-end;

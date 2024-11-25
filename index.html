@@ -5,28 +5,113 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Undangan Digital</title>
   <link rel="stylesheet" href="style.css"> <!-- Link ke file CSS -->
+  <style>
+    /* Gaya tambahan untuk memastikan tata letak yang baik */
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      font-family: Arial, sans-serif;
+    }
+    .page {
+      display: none;
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+    }
+    .page-1 {
+      display: block; /* Halaman pertama aktif secara default */
+    }
+    video {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      height: auto;
+      min-width: 100%;
+      min-height: 100%;
+      object-fit: cover;
+    }
+    .welcome, .couple-names, .couple-description {
+      text-align: center;
+      color: white;
+      position: relative;
+      z-index: 1;
+    }
+    .open-btn {
+      position: absolute;
+      bottom: 20%;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 10px 20px;
+      font-size: 18px;
+      color: white;
+      background: #ff4081;
+      border: none;
+      cursor: pointer;
+      z-index: 1;
+    }
+    .countdown-section {
+      position: relative;
+      z-index: 1;
+      color: white;
+      text-align: center;
+    }
+    .countdown-box {
+      display: inline-block;
+      margin: 0 10px;
+    }
+    .gallery-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 300px;
+      overflow: hidden;
+    }
+    .gallery img {
+      display: none;
+      max-width: 100%;
+      max-height: 100%;
+    }
+    .gallery img.active {
+      display: block;
+    }
+    .event-map-button {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      margin: 20px auto;
+      text-align: center;
+      z-index: 1;
+    }
+  </style>
 </head>
 <body>
   <!-- Halaman Pertama -->
   <div class="page page-1">
-    <video autoplay loop muted>
+    <video autoplay loop muted playsinline>
       <source src="./new1.mp4" type="video/mp4">
       Browser Anda tidak mendukung video.
     </video>
-    <div class="welcome"></div>
+    <div class="welcome">Selamat Datang</div>
     <button class="open-btn">Buka Undangan</button>
   </div>
 
   <!-- Halaman Kedua -->
   <div class="page page-2">
     <!-- Video background -->
-    <video autoplay loop muted>
+    <video autoplay loop muted playsinline>
       <source src="./ffk.mp4" type="video/mp4">
       Browser Anda tidak mendukung video.
     </video>
 
     <!-- Bagian Countdown -->
-    <div class="section countdown-section">
+    <div class="countdown-section">
       <div class="countdown" id="countdown">
         <div class="countdown-box" id="Hari">
           <span>0</span>
@@ -48,42 +133,26 @@
     </div>
 
     <!-- Bagian Nama Mempelai -->
-    <div class="section couple-section">
-      <video autoplay loop muted>
-        <source src="./new3.mp4" type="video/mp4">
-        Browser Anda tidak mendukung video.
-      </video>
-      <div class="couple-names"></div>
-      <div class="couple-description"></div>
+    <div class="couple-section">
+      <div class="couple-names">John & Jane</div>
+      <div class="couple-description">14 Desember 2024</div>
     </div>
 
     <!-- Bagian Save The Date -->
-    <div class="section maps-section">
-      <a href="https://www.google.com/maps/place/Gedung+Serbaguna+Kusuma+Raga/@-6.3152507,106.9957769,17z/data=!3m1!4b1!4m6!3m5!1s0x2e6992225c6c0b53:0x1c118d817ae82e34!8m2!3d-6.3152507!4d106.9983518!16s%2Fg%2F1q5bl0y71?entry=ttu&g_ep=EgoyMDI0MTExOS4yIKXMDSoJLDEwMjExMjM0SAFQAw%3D%3D" target="_blank" class="event-map-button">📍Lihat Maps</a>
+    <div class="maps-section">
+      <a href="https://www.google.com/maps/place/Gedung+Serbaguna+Kusuma+Raga/" target="_blank" class="event-map-button">📍Lihat Maps</a>
     </div>
 
     <!-- Bagian Galeri Foto -->
-    <div class="section gallery-section">
-      <video autoplay loop muted>
-        <source src="./new5.mp4" type="video/mp4">
-        Browser Anda tidak mendukung video.
-      </video>
-      <h2 class="gallery-title">Galeri Foto</h2>
-      <p class="gallery-subtitle">Memori kisah kami</p>
-      
-      <!-- Galeri dengan gambar yang berganti-ganti -->
-      <div class="gallery-section">
-        <div class="gallery-container">
-          <div class="gallery">
-            <img src="./newp1.jpg" alt="Image 1" class="active">
-            <img src="./newp2.jpg" alt="Image 2">
-            <img src="./newp3.jpg" alt="Image 3">
-            <img src="./newp4.jpg" alt="Image 4">
-            <img src="./newp5.jpg" alt="Image 5">
-          </div>
+    <div class="gallery-section">
+      <h2>Galeri Foto</h2>
+      <div class="gallery-container">
+        <div class="gallery">
+          <img src="./newp1.jpg" alt="Image 1" class="active">
+          <img src="./newp2.jpg" alt="Image 2">
+          <img src="./newp3.jpg" alt="Image 3">
         </div>
       </div>
-      
     </div>
   </div>
 
@@ -91,70 +160,57 @@
   <audio id="background-music" src="./marryyourdaughter.mp3" preload="auto" loop></audio>
 
   <script>
-    // Menampilkan halaman kedua dan memutar musik
+    // Tombol buka undangan
     document.querySelector('.open-btn').addEventListener('click', () => {
       document.querySelector('.page-1').style.display = 'none';
       document.querySelector('.page-2').style.display = 'block';
-      
+
       const audio = document.getElementById('background-music');
       if (audio.paused) {
-        audio.play().catch(error => console.error("Gagal memutar musik:", error));
+        audio.play().catch(err => console.error("Gagal memutar musik:", err));
       }
     });
- 
+
     // Countdown
-    const eventDate = new Date("2024-12-14T00:00:00").getTime(); // Tanggal acara
+    const eventDate = new Date("2024-12-14T00:00:00").getTime();
     setInterval(() => {
-      const now = new Date().getTime(); // Waktu saat ini
+      const now = Date.now();
       const distance = eventDate - now;
 
-      if (distance >= 0) {
-        // Hitung sisa waktu
+      if (distance > 0) {
         const days = Math.floor(distance / (1000 * 60 * 60 * 24));
         const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
         const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-        // Tampilkan nilai countdown
-        document.getElementById("Hari").innerHTML = `<span>${days}</span><div class="label">Hari</div>`;
-        document.getElementById("Jam").innerHTML = `<span>${hours}</span><div class="label">Jam</div>`;
-        document.getElementById("Menit").innerHTML = `<span>${minutes}</span><div class="label">Menit</div>`;
-        document.getElementById("Detik").innerHTML = `<span>${seconds}</span><div class="label">Detik</div>`;
+        document.getElementById("Hari").querySelector('span').textContent = days;
+        document.getElementById("Jam").querySelector('span').textContent = hours;
+        document.getElementById("Menit").querySelector('span').textContent = minutes;
+        document.getElementById("Detik").querySelector('span').textContent = seconds;
       }
     }, 1000);
 
-    // Galeri Foto: Pergantian gambar otomatis
-    const images = [
-      './newp1.jpg',
-      './newp2.jpg',
-      './newp3.jpg',
-      './newp4.jpg',
-      './newp5.jpg'
-    ]; // Daftar gambar
-    let currentIndex = 0; // Indeks awal
-    const galleryImage = document.querySelector('.gallery img');
+    // Galeri Foto
+    const images = document.querySelectorAll(".gallery img");
+    let currentImageIndex = 0;
 
-    images[currentIndex].classList.remove('active');
+    setInterval(() => {
+      images[currentImageIndex].classList.remove('active');
+      currentImageIndex = (currentImageIndex + 1) % images.length;
+      images[currentImageIndex].classList.add('active');
+    }, 5000);
 
-    function showNextImage() {
-    galleryImage[currentIndex].classList.remove('active');
-    currentIndex = (currentIndex + 1) % galleryImage.length;
-    galleryImage[currentIndex].classList.add('active');
-  }
-
-    // Ganti gambar setiap 5 detik
-    setInterval(changeImage, 5000);
-
-    // Hentikan video dan musik saat meninggalkan halaman
+    // Hentikan video dan musik saat tab tidak aktif
     document.addEventListener("visibilitychange", () => {
       const videos = document.querySelectorAll("video");
-      const audio = document.getElementById('background-music');
+      const audio = document.getElementById("background-music");
+
       if (document.hidden) {
         videos.forEach(video => video.pause());
         audio.pause();
       } else {
         videos.forEach(video => video.play());
-        audio.play().catch(error => console.error("Gagal memutar musik:", error));
+        audio.play().catch(err => console.error("Gagal memutar musik:", err));
       }
     });
   </script>
