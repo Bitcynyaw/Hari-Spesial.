@@ -121,7 +121,7 @@
 
   .countdown {
     position: absolute;
-    bottom: 10%; /* Jarak ke bawah diturunkan */
+    bottom: 5%; /* Jarak ke bawah diturunkan */
     left: 50%;
     transform: translateX();
     display: flex;
