@@ -73,7 +73,7 @@
     position: absolute;
     bottom: 10%;
     left: 50%;
-    transform: translateX();
+    transform: translateX(-50%);
     padding: 5vw 10vw;
     font-size: 5vw;
     color: #f4bdb5;
@@ -121,13 +121,13 @@
 
   .countdown {
     position: absolute;
-    bottom: 17%;
-    left: 22%;
+    bottom: 10%; /* Atur jarak bawah */
+    left: 50%;
+    transform: translate(-50%, 0);
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 15px;
-    margin-top: 20px;
     flex-wrap: wrap;
   }
 
