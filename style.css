@@ -221,7 +221,7 @@
   display: grid;
   grid-template-columns: repeat(5, 1fr); /* Fixed to 5 columns */
   gap: 5px;
-  padding: 5 10%;
+  padding: 50 10%;
   justify-items: center; /* Center images within the grid */
 }
 
