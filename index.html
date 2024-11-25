@@ -137,16 +137,16 @@
     images[currentIndex].classList.remove('active');
 
     function showNextImage() {
-    images[currentIndex].classList.remove('active');
-    currentIndex = (currentIndex + 1) % images.length;
-    images[currentIndex].classList.add('active');
+    galleryImage[currentIndex].classList.remove('active');
+    currentIndex = (currentIndex + 1) % galleryImage.length;
+    galleryImage[currentIndex].classList.add('active');
   }
 
     // Ganti gambar setiap 5 detik
     setInterval(changeImage, 5000);
 
     // Hentikan video dan musik saat meninggalkan halaman
-    document.addEventListener("visibilitychange", function () {
+    document.addEventListener("visibilitychange", () => {
       const videos = document.querySelectorAll("video");
       const audio = document.getElementById('background-music');
       if (document.hidden) {
