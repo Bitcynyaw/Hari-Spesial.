@@ -122,7 +122,7 @@
 
   .countdown  {
     position: absolute;
-    bottom: 5%; /* Naikkan sedikit */
+    bottom: 2%; /* Naikkan sedikit */
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -196,7 +196,7 @@
   .gallery-container {
     position: relative;
   display: grid;
-  grid-template-columns: repeat(auto-fill, 1fr); /* Buat grid otomatis */
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Buat grid otomatis */
   gap: 20px; /* Jarak antar frame */
   justify-content: center;
   max-width: 900px; /* Atur lebar maksimal galeri */
@@ -224,13 +224,13 @@
   }
 
   .gallery img {
-    width: 100%; /* Lebar penuh dalam frame */
-  height: 100%; /* Tinggi penuh dalam frame */
-  aspect-ratio: 1/1; /* Kotak dengan rasio 1:1 seperti Instagram */
-  object-fit: cover; /* Menyesuaikan gambar tanpa memotongnya, crop jika perlu */
+    width: 100%; /* Lebar penuh dalam frame */ /* Tinggi penuh dalam frame */
+  aspect-ratio: 1; /* Kotak dengan rasio 1:1 seperti Instagram */
+  object-fit: contain; /* Menyesuaikan gambar tanpa memotongnya, crop jika perlu */
   border: 5px solid #682b18; /* Opsional: Tambahkan border untuk frame */
   border-radius: 10px; /* Opsional: Rounding tepi frame */
   transition: transform 0.5s ease;
+  overflow: hidden;
   }
 
   .gallery img:hover {
