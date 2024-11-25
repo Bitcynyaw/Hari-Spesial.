@@ -71,9 +71,9 @@
 
   .page-1 .open-btn {
     position: absolute;
-    bottom: 10%;
+    bottom: 25%; /* Posisi lebih naik */
     left: 50%;
-    transform: translateX();
+    transform: translateX(-50%);
     padding: 2.5vw 6vw;
     font-size: 3vw;
     color: #f4bdb5;
@@ -121,9 +121,9 @@
 
   .countdown {
     position: absolute;
-    bottom: 20%; /* Jarak ke bawah diturunkan */
-    left: 45%;
-    transform: translateX();
+    bottom: 35%; /* Posisi lebih naik */
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
     justify-content: center;
     align-items: center;
