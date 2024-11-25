@@ -1,3 +1,4 @@
+/* Media Query: Seluruh CSS hanya berlaku pada perangkat handphone */
 @media (max-width: 768px) {
   /* Reset margin dan padding */
   * {
@@ -54,26 +55,16 @@
     width: 100vw;
     height: 100vh;
   }
+  
 
   .page-1 {
     background: url('./bg1.mp4') no-repeat center center/cover;
-    position: relative;
     animation: fadeIn 1.5s ease-in-out;
-  }
-
-  .page-1 .background-video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1;
   }
 
   .page-1 .welcome {
     color: #fff;
-    font-size: 10vw;
+    font-size: 10vw; /* Ukuran font disesuaikan untuk handphone */
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     animation: slideInFromTop 1s ease-in-out;
   }
@@ -82,6 +73,7 @@
     position: absolute;
     bottom: 20%; /* Atur jarak dari bawah */
     left: 34%;
+    transform: translateX();
     padding: 2.5vw 6vw;
     font-size: 3vw;
     color: #f4bdb5;
@@ -92,6 +84,7 @@
     transition: 0.3s ease-in-out;
     animation: scaleUp 1.5s ease-in-out;
   }
+  
 
   .page-1 .open-btn:hover {
     background: #682b18;
@@ -104,16 +97,7 @@
     overflow-y: scroll;
     height: 100vh;
     scroll-snap-type: y mandatory;
-  }
-
-  .page-2 .background-video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1;
+    background: url('./ffk.jpg') no-repeat center center/cover;
   }
 
   .section {
@@ -128,17 +112,15 @@
     text-align: center;
     padding: 5%;
     animation: fadeIn 1.5s ease-in-out;
-    position: relative;
-    z-index: 1;
   }
 
   /* Countdown Style */
   .countdown-section {
-    margin-top: 15vh;
     background: url('./bg2.mp4') no-repeat center center/cover;
+    margin-top: 15vh;
   }
 
-  .countdown {
+  .countdown  {
     position: absolute;
     bottom: 25%; /* Naikkan sedikit */
     left: 50%;
@@ -148,6 +130,7 @@
     align-items: center;
     gap: 10px; /* Jarak antar kotak */
   }
+  
 
   .countdown-box {
     position: relative;
@@ -157,6 +140,7 @@
     align-items: center;
     width: 15vw; /* Ukuran box lebih kecil */
     max-width: 50px;
+    height: auto;
     background-color: #682b18;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -179,7 +163,6 @@
 
   /* Nama Mempelai */
   .couple-section {
-    position: relative;
     background: url('./bg3.mp4') no-repeat center center/cover;
   }
 
@@ -232,6 +215,14 @@
     font-size: 4vw;
     margin-bottom: 2vw;
     color: #5d2121;
+  }
+
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 0 10%;
+    justify-content: center;
   }
 
   .gallery img {
