@@ -121,14 +121,14 @@
 
   .countdown {
     position: absolute;
-    bottom: 10%; /* Atur jarak bawah */
-    left: 50%;
-    transform: translate(-50%, 0);
-    display: flex;
+    bottom: 10%; /* Jarak ke bawah */
+    left: 50%; /* Posisi horizontal di tengah */
+    transform: translate(-50%, 0); /* Agar tepat di tengah */
+    display: flex; /* Mengatur elemen secara horizontal */
     justify-content: center;
     align-items: center;
-    gap: 15px;
-    flex-wrap: wrap;
+    gap: 10px; /* Jarak antar elemen */
+    flex-wrap: nowrap; /* Tidak membungkus ke baris berikutnya */
   }
 
   .countdown-box {
@@ -137,28 +137,19 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 25vw;
-    max-width: 80px;
-    min-width: 60px;
-    height: auto;
-    background-color: #682b18;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     text-align: center;
-    padding: 10px;
   }
 
   .countdown-box span {
-    font-size: 6vw;
+    font-size: 7vw; /* Ukuran angka lebih besar */
     font-weight: bold;
     color: #f4bdb5;
   }
 
   .countdown-box .label {
-    font-size: 4vw;
+    font-size: 4vw; /* Ukuran label lebih kecil */
     font-weight: normal;
     color: #f4bdb5;
-    margin-top: 5px;
   }
 
   /* Nama Mempelai */
