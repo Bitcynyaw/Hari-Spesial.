@@ -9,12 +9,22 @@
 <body>
   <!-- Halaman Pertama -->
   <div class="page page-1">
+    <video autoplay loop muted>
+      <source src="./new1.mp4" type="video/mp4">
+      Browser Anda tidak mendukung video.
+    </video>
     <div class="welcome"></div>
     <button class="open-btn">Buka Undangan</button>
   </div>
 
   <!-- Halaman Kedua -->
   <div class="page page-2">
+    <!-- Video background -->
+    <video autoplay loop muted>
+      <source src="./ffk.mp4" type="video/mp4">
+      Browser Anda tidak mendukung video.
+    </video>
+
     <!-- Bagian Countdown -->
     <div class="section countdown-section">
       <div class="countdown" id="countdown">
@@ -39,6 +49,10 @@
 
     <!-- Bagian Nama Mempelai -->
     <div class="section couple-section">
+      <video autoplay loop muted>
+        <source src="./new3.mp4" type="video/mp4">
+        Browser Anda tidak mendukung video.
+      </video>
       <div class="couple-names"></div>
       <div class="couple-description"></div>
     </div>
@@ -50,6 +64,10 @@
 
     <!-- Bagian Galeri Foto -->
     <div class="section gallery-section">
+      <video autoplay loop muted>
+        <source src="./new5.mp4" type="video/mp4">
+        Browser Anda tidak mendukung video.
+      </video>
       <h2 class="gallery-title">Galeri Foto</h2>
       <p class="gallery-subtitle">Memori kisah kami</p>
       
@@ -74,7 +92,7 @@
         audio.play().catch(error => console.error("Gagal memutar musik:", error));
       }
     });
-
+ 
     // Countdown
     const eventDate = new Date("2024-12-14T00:00:00").getTime(); // Tanggal acara
     setInterval(() => {
@@ -118,6 +136,19 @@
 
     // Ganti gambar setiap 5 detik
     setInterval(changeImage, 5000);
+
+    // Hentikan video dan musik saat meninggalkan halaman
+    document.addEventListener("visibilitychange", function () {
+      const videos = document.querySelectorAll("video");
+      const audio = document.getElementById('background-music');
+      if (document.hidden) {
+        videos.forEach(video => video.pause());
+        audio.pause();
+      } else {
+        videos.forEach(video => video.play());
+        audio.play().catch(error => console.error("Gagal memutar musik:", error));
+      }
+    });
   </script>
 </body>
 </html>
