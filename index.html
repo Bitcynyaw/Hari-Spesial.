@@ -4,56 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Undangan Digital</title>
-  <style>
-    body, html {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    .page {
-      position: relative;
-      width: 100%;
-      height: 100vh;
-      overflow: hidden;
-    }
-
-    video {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      z-index: -1;
-    }
-
-    .gallery-container {
-      position: relative;
-      width: 90%;
-      max-width: 900px;
-      height: 500px;
-      border: 10px solid #682b18;
-      border-radius: 10px;
-      overflow: hidden;
-      margin: 0 auto;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    }
-
-    .gallery img {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: none;
-      transition: opacity 0.5s ease-in-out;
-    }
-
-    .gallery img.active {
-      display: block;
-      opacity: 1;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css"> <!-- Link ke file CSS -->
 </head>
 <body>
   <!-- Halaman Pertama -->
@@ -120,16 +71,19 @@
       <h2 class="gallery-title">Galeri Foto</h2>
       <p class="gallery-subtitle">Memori kisah kami</p>
       
-      <!-- Galeri -->
-      <div class="gallery-container">
-        <div class="gallery">
-          <img src="./newp1.jpg" alt="Image 1" class="active">
-          <img src="./newp2.jpg" alt="Image 2">
-          <img src="./newp3.jpg" alt="Image 3">
-          <img src="./newp4.jpg" alt="Image 4">
-          <img src="./newp5.jpg" alt="Image 5">
+      <!-- Galeri dengan gambar yang berganti-ganti -->
+      <div class="gallery-section">
+        <div class="gallery-container">
+          <div class="gallery">
+            <img src="./newp1.jpg" alt="Image 1" class="active">
+            <img src="./newp2.jpg" alt="Image 2">
+            <img src="./newp3.jpg" alt="Image 3">
+            <img src="./newp4.jpg" alt="Image 4">
+            <img src="./newp5.jpg" alt="Image 5">
+          </div>
         </div>
       </div>
+      
     </div>
   </div>
 
@@ -141,25 +95,27 @@
     document.querySelector('.open-btn').addEventListener('click', () => {
       document.querySelector('.page-1').style.display = 'none';
       document.querySelector('.page-2').style.display = 'block';
-
+      
       const audio = document.getElementById('background-music');
       if (audio.paused) {
         audio.play().catch(error => console.error("Gagal memutar musik:", error));
       }
     });
-
+ 
     // Countdown
-    const eventDate = new Date("2024-12-14T00:00:00").getTime();
+    const eventDate = new Date("2024-12-14T00:00:00").getTime(); // Tanggal acara
     setInterval(() => {
-      const now = new Date().getTime();
+      const now = new Date().getTime(); // Waktu saat ini
       const distance = eventDate - now;
 
       if (distance >= 0) {
+        // Hitung sisa waktu
         const days = Math.floor(distance / (1000 * 60 * 60 * 24));
         const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
         const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
+        // Tampilkan nilai countdown
         document.getElementById("Hari").innerHTML = `<span>${days}</span><div class="label">Hari</div>`;
         document.getElementById("Jam").innerHTML = `<span>${hours}</span><div class="label">Jam</div>`;
         document.getElementById("Menit").innerHTML = `<span>${minutes}</span><div class="label">Menit</div>`;
@@ -168,19 +124,29 @@
     }, 1000);
 
     // Galeri Foto: Pergantian gambar otomatis
-    const galleryImages = document.querySelectorAll('.gallery img');
-    let currentImageIndex = 0;
+    const images = [
+      './newp1.jpg',
+      './newp2.jpg',
+      './newp3.jpg',
+      './newp4.jpg',
+      './newp5.jpg'
+    ]; // Daftar gambar
+    let currentIndex = 0; // Indeks awal
+    const galleryImage = document.querySelector('.gallery img');
 
-    function showNextGalleryImage() {
-      galleryImages[currentImageIndex].classList.remove('active');
-      currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
-      galleryImages[currentImageIndex].classList.add('active');
-    }
+    images[currentIndex].classList.remove('active');
 
-    setInterval(showNextGalleryImage, 5000);
+    function showNextImage() {
+    images[currentIndex].classList.remove('active');
+    currentIndex = (currentIndex + 1) % images.length;
+    images[currentIndex].classList.add('active');
+  }
+
+    // Ganti gambar setiap 5 detik
+    setInterval(changeImage, 5000);
 
     // Hentikan video dan musik saat meninggalkan halaman
-    document.addEventListener("visibilitychange", () => {
+    document.addEventListener("visibilitychange", function () {
       const videos = document.querySelectorAll("video");
       const audio = document.getElementById('background-music');
       if (document.hidden) {
