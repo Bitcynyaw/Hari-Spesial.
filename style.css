@@ -71,10 +71,10 @@
 
   .page-1 .open-btn {
     position: absolute;
-    bottom: 10%;
-    left: 50%;
+    bottom: 20%;
+    left: 47%;
     transform: translateX();
-    padding: 3vw 6vw;
+    padding: 2.5vw 6vw;
     font-size: 5vw;
     color: #f4bdb5;
     background: #682b18;
