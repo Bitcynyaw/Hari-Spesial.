@@ -72,7 +72,7 @@
   .page-1 .open-btn {
     position: absolute;
     bottom: 20%; /* Atur jarak dari bawah */
-    left: 47%;
+    left: 45%;
     transform: translateX();
     padding: 2.5vw 6vw;
     font-size: 3vw;
