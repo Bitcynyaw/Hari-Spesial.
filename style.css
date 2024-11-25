@@ -225,12 +225,12 @@
 
   .gallery img {
     width: 100%; /* Lebar penuh dalam frame */
-    height: auto; /* Tinggi otomatis sesuai rasio gambar */
-    aspect-ratio: 1/1; /* Kotak dengan rasio 1:1 seperti Instagram */
-    object-fit: contain; /* Menyesuaikan gambar tanpa memotongnya */
-    border: 5px solid #682b18; /* Opsional: Tambahkan border untuk frame */
-    border-radius: 10px; /* Opsional: Rounding tepi frame */
-    transition: transform 0.5s ease;
+  height: 100%; /* Tinggi penuh dalam frame */
+  aspect-ratio: 1/1; /* Kotak dengan rasio 1:1 seperti Instagram */
+  object-fit: cover; /* Menyesuaikan gambar tanpa memotongnya, crop jika perlu */
+  border: 5px solid #682b18; /* Opsional: Tambahkan border untuk frame */
+  border-radius: 10px; /* Opsional: Rounding tepi frame */
+  transition: transform 0.5s ease;
   }
 
   .gallery img:hover {
