@@ -217,9 +217,9 @@
     text-decoration: none;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease-in-out;
-    position: absolute; /* Bisa diubah ke 'relative' jika diperlukan */
-    top: 40px;    /* Geser ke bawah dari atas 20px */
-    left: 50px; 
+    position: relative; /* Bisa diubah ke 'relative' jika diperlukan */
+    bottom: 28%;    /* Geser ke bawah dari atas 20px */
+    left: 50%; 
   }
 
   .event-map-button:hover {
