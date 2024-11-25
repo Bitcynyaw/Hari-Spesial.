@@ -219,23 +219,24 @@
 
 .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(5, 1fr); /* Fixed to 5 columns */
   gap: 20px;
   padding: 0 10%;
-  justify-content: center;
+  justify-items: center; /* Center images within the grid */
 }
 
 .gallery img {
-  width: 50%;
-  height: 500%;
+  width: 100%; /* Full width of the column */
+  height: auto; /* Maintain aspect ratio */
   object-fit: cover;
-  transition: opacity 0.5s ease;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
 }
 
 .gallery img:hover {
   transform: scale(1.05);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
 }
+
 
   /* Button Maps */
   .maps-section {
