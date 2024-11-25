@@ -132,16 +132,15 @@
       './newp5.jpg'
     ]; // Daftar gambar
     let currentIndex = 0; // Indeks awal
-    const galleryImage = document.querySelector('.gallery-image');
+    const galleryImage = document.querySelector('.gallery img');
 
-    function changeImage() {
-      currentIndex = (currentIndex + 1) % images.length; // Indeks berputar
-      galleryImage.style.opacity = 0; // Efek fade out
-      setTimeout(() => {
-        galleryImage.src = images[currentIndex]; // Ganti gambar
-        galleryImage.style.opacity = 1; // Efek fade in
-      }, 500); // Waktu sinkron dengan transisi
-    }
+    images[currentIndex].classList.remove('active');
+
+    function showNextImage() {
+    images[currentIndex].classList.remove('active');
+    currentIndex = (currentIndex + 1) % images.length;
+    images[currentIndex].classList.add('active');
+  }
 
     // Ganti gambar setiap 5 detik
     setInterval(changeImage, 5000);

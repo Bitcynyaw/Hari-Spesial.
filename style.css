@@ -221,13 +221,13 @@
   display: grid;
   grid-template-columns: repeat(5, 1fr); /* Fixed to 5 columns */
   gap: 5px;
-  padding: 90 45%;
+  padding: 90px 0; /* Adjust to center images */
   justify-items: center; /* Center images within the grid */
 }
 
 .gallery img {
-  width: 100%; /* Full width of the column */
-  height: 1; /* Maintain aspect ratio */
+  max-width: 80%; /* Limit image width */
+  height: auto; /* Maintain aspect ratio */
   object-fit: cover;
   transition: transform 0.5s ease, box-shadow 0.5s ease;
 }
@@ -235,6 +235,15 @@
 .gallery img:hover {
   transform: scale(1.05);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Hide all images by default except the first one */
+.gallery img {
+  display: none;
+}
+
+.gallery img.active {
+  display: block; /* Show only the active image */
 }
 
 
