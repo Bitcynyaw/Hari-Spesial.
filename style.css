@@ -56,7 +56,7 @@
   }
 
   .page-1 {
-    background: url('./bg1.mp4') no-repeat center center/cover;
+    background: url('./assets/bg1.mp4') no-repeat center center/cover;
     animation: fadeIn 1.5s ease-in-out;
   }
 
@@ -109,14 +109,14 @@
 
   /* Countdown */
   .countdown-section {
-    background: url('./bg2.mp4') no-repeat center center/cover;
+    background: url('./assets/bg2.mp4') no-repeat center center/cover;
   }
 
   .countdown {
     display: flex;
     gap: 10px;
     position: absolute;
-    bottom: -9%;
+    bottom: 3%;
   }
 
   .countdown-box {
@@ -145,7 +145,7 @@
 
   /* Nama Mempelai */
   .couple-section {
-    background: url('./bg3.mp4') no-repeat center center/cover;
+    background: url('./assets/bg3.mp4') no-repeat center center/cover;
   }
 
   .couple-names {
@@ -168,7 +168,7 @@
     justify-content: center;
     align-items: center;
     padding: 20px;
-    background: url('./bg5.mp4') no-repeat center center/cover;
+    background: url('./assets/bg5.mp4') no-repeat center center/cover;
     background-size: cover;
     height: 100vh;
   }
@@ -202,16 +202,13 @@
 
   /* Tombol Maps */
   .maps-section {
-    background: url('./bg4.mp4') no-repeat center center/cover;
+    background: url('./assets/bg4.mp4') no-repeat center center/cover;
     display: flex;
     justify-content: center;
     align-items: flex-end;
   }
 
   .event-map-button {
-    position: absolute; /* Bisa diubah ke 'relative' jika diperlukan */
-    bottom: 28%;    /* Geser ke bawah dari atas 20px */
-    left: 50%; 
     padding: 5px 10px;
     background: #682b18;
     color: #f4bdb5;
@@ -225,4 +222,25 @@
   .event-map-button:hover {
     transform: scale(1.05);
   }
+  .video-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+  }
+  
+  .bg-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .section {
+    position: relative;
+    z-index: 1;
+  }
+  
 }
