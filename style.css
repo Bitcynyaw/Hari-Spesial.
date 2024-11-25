@@ -47,15 +47,15 @@
 
   /* Halaman Pertama */
   .page {
-    width: 100vw;
-    height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    text-align: center;
     position: relative;
+    width: 100vw;
+    height: 100vh;
   }
+  
 
   .page-1 {
     background: url('./new1.gif') no-repeat center center/cover;
@@ -71,7 +71,7 @@
 
   .page-1 .open-btn {
     position: absolute;
-    bottom: 25%; /* Posisi lebih naik */
+    bottom: 20%; /* Atur jarak dari bawah */
     left: 50%;
     transform: translateX(-50%);
     padding: 2.5vw 6vw;
@@ -84,6 +84,7 @@
     transition: 0.3s ease-in-out;
     animation: scaleUp 1.5s ease-in-out;
   }
+  
 
   .page-1 .open-btn:hover {
     background: #682b18;
@@ -119,17 +120,17 @@
     margin-top: 15vh;
   }
 
-  .countdown {
+  .countdown  {
     position: absolute;
-    bottom: 35%; /* Posisi lebih naik */
+    bottom: 30%; /* Naikkan sedikit */
     left: 50%;
     transform: translateX(-50%);
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 10px; /* Jarak antar box */
-    flex-wrap: nowrap; /* Tetap dalam satu baris */
+    gap: 10px; /* Jarak antar kotak */
   }
+  
 
   .countdown-box {
     position: relative;
