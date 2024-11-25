@@ -196,10 +196,10 @@
 .gallery-container {
   position: relative;
   width: 90%;
-  max-width: 600px;
+  max-width: 900px;
   height: auto;
   border: 10px solid #682b18;
-  border-radius: 15px;
+  border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
@@ -220,14 +220,14 @@
 .gallery {
   display: grid;
   grid-template-columns: repeat(5, 1fr); /* Fixed to 5 columns */
-  gap: 20px;
-  padding: 0 10%;
+  gap: 5px;
+  padding: 5 10%;
   justify-items: center; /* Center images within the grid */
 }
 
 .gallery img {
   width: 100%; /* Full width of the column */
-  height: auto; /* Maintain aspect ratio */
+  height: 1; /* Maintain aspect ratio */
   object-fit: cover;
   transition: transform 0.5s ease, box-shadow 0.5s ease;
 }
